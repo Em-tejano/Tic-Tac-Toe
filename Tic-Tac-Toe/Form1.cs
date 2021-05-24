@@ -28,12 +28,31 @@ namespace Tic_Tac_Toe
             {
                 Trn++;
                 button.Text = Plyr1;
+                this.TimerBar.Value = 0;
             }
             else
             {
                 Trn++;
                 button.Text = Plyr2;
+                this.TimerBar.Value = 0;
             }
+        }
+
+        private void TimeTimer_Tick(object sender, EventArgs e)
+        {
+            if (TimerBar.Value == 100)
+            {
+                Trn++;
+            }
+            else
+            {
+                this.TimerBar.Value += 1;
+            }
+        }
+
+        private void BtnStart_Click(object sender, EventArgs e)
+        {
+            TimeTimer.Enabled = true;
         }
     }
 }

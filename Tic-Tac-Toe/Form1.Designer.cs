@@ -29,6 +29,7 @@ namespace Tic_Tac_Toe
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.brdTopLeft = new System.Windows.Forms.Button();
             this.brdTopCenter = new System.Windows.Forms.Button();
             this.brdTopRight = new System.Windows.Forms.Button();
@@ -38,6 +39,9 @@ namespace Tic_Tac_Toe
             this.brdBottomLeft = new System.Windows.Forms.Button();
             this.brdBottomCenter = new System.Windows.Forms.Button();
             this.brdBottomRight = new System.Windows.Forms.Button();
+            this.TimerBar = new System.Windows.Forms.ProgressBar();
+            this.TimeTimer = new System.Windows.Forms.Timer(this.components);
+            this.BtnStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // brdTopLeft
@@ -123,11 +127,36 @@ namespace Tic_Tac_Toe
             this.brdBottomRight.UseVisualStyleBackColor = true;
             this.brdBottomRight.Click += new System.EventHandler(this.BrdButton_Click);
             // 
+            // TimerBar
+            // 
+            this.TimerBar.Location = new System.Drawing.Point(255, 12);
+            this.TimerBar.Name = "TimerBar";
+            this.TimerBar.Size = new System.Drawing.Size(284, 23);
+            this.TimerBar.TabIndex = 9;
+            // 
+            // TimeTimer
+            // 
+            this.TimeTimer.Interval = 20;
+            this.TimeTimer.Tick += new System.EventHandler(this.TimeTimer_Tick);
+            // 
+            // BtnStart
+            // 
+            this.BtnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BtnStart.Location = new System.Drawing.Point(212, 404);
+            this.BtnStart.Name = "BtnStart";
+            this.BtnStart.Size = new System.Drawing.Size(127, 49);
+            this.BtnStart.TabIndex = 0;
+            this.BtnStart.Text = "Start";
+            this.BtnStart.UseVisualStyleBackColor = true;
+            this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(551, 465);
+            this.Controls.Add(this.BtnStart);
+            this.Controls.Add(this.TimerBar);
             this.Controls.Add(this.brdBottomRight);
             this.Controls.Add(this.brdBottomCenter);
             this.Controls.Add(this.brdBottomLeft);
@@ -154,6 +183,9 @@ namespace Tic_Tac_Toe
         private System.Windows.Forms.Button brdBottomLeft;
         private System.Windows.Forms.Button brdBottomCenter;
         private System.Windows.Forms.Button brdBottomRight;
+        private System.Windows.Forms.ProgressBar TimerBar;
+        private System.Windows.Forms.Timer TimeTimer;
+        private System.Windows.Forms.Button BtnStart;
     }
 }
 
