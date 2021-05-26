@@ -30,6 +30,7 @@ namespace Tic_Tac_Toe
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.brdTopLeft = new System.Windows.Forms.Button();
             this.brdTopCenter = new System.Windows.Forms.Button();
             this.brdTopRight = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@ namespace Tic_Tac_Toe
             this.TimeTimer = new System.Windows.Forms.Timer(this.components);
             this.BtnStart = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // brdTopLeft
@@ -171,11 +173,21 @@ namespace Tic_Tac_Toe
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.Reset_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(255, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(302, 85);
+            this.label1.TabIndex = 11;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 264);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.BtnStart);
             this.Controls.Add(this.TimerBar);
@@ -188,11 +200,15 @@ namespace Tic_Tac_Toe
             this.Controls.Add(this.brdTopRight);
             this.Controls.Add(this.brdTopCenter);
             this.Controls.Add(this.brdTopLeft);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Tic-Tac-Toe";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -211,6 +227,7 @@ namespace Tic_Tac_Toe
         private System.Windows.Forms.Timer TimeTimer;
         private System.Windows.Forms.Button BtnStart;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Label label1;
     }
 }
 

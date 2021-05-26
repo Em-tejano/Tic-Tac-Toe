@@ -13,7 +13,7 @@ namespace Tic_Tac_Toe
     public partial class Form1 : Form
     {
         string Plyr1 = "X";
-        string Plyr2 = "0";
+        string Plyr2 = "O";
         byte Trn = 0;
 
         public Form1()
@@ -46,6 +46,7 @@ namespace Tic_Tac_Toe
             if (TimerBar.Value == 100)
             {
                 Trn++;
+                TimerBar.Value = 0;
             }
             else
             {
@@ -106,14 +107,17 @@ namespace Tic_Tac_Toe
                 if (WinComb.Equals("XXX"))
                 {
                     MessageBox.Show("Player X  has won the game", "Congratulations!", MessageBoxButtons.OK);
+                    break;
                 }
                 else if (WinComb.Equals("OOO"))
                 {
                     MessageBox.Show("Player O  has won the game", "Congratulations!", MessageBoxButtons.OK);
+                    break;
                 }
                 else if (Board.Length == 9)
                 {
                     MessageBox.Show("No Winner!", "Let's Try Again!", MessageBoxButtons.OK);
+                    break;
                 }
             }
         }
@@ -130,6 +134,15 @@ namespace Tic_Tac_Toe
             brdTopLeft.Text = "";
             brdTopRight.Text = "";
             Trn = 0;
+            brdBottomCenter.Enabled = false;
+            brdBottomLeft.Enabled = false;
+            brdBottomRight.Enabled = false;
+            brdCenterCenter.Enabled = false;
+            brdCenterLeft.Enabled = false;
+            brdCenterRight.Enabled = false;
+            brdTopCenter.Enabled = false;
+            brdTopLeft.Enabled = false;
+            brdTopRight.Enabled = false;
         }
     }
 }
