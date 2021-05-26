@@ -42,10 +42,12 @@ namespace Tic_Tac_Toe
             this.TimerBar = new System.Windows.Forms.ProgressBar();
             this.TimeTimer = new System.Windows.Forms.Timer(this.components);
             this.BtnStart = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // brdTopLeft
             // 
+            this.brdTopLeft.Enabled = false;
             this.brdTopLeft.Location = new System.Drawing.Point(12, 12);
             this.brdTopLeft.Name = "brdTopLeft";
             this.brdTopLeft.Size = new System.Drawing.Size(75, 76);
@@ -55,6 +57,7 @@ namespace Tic_Tac_Toe
             // 
             // brdTopCenter
             // 
+            this.brdTopCenter.Enabled = false;
             this.brdTopCenter.Location = new System.Drawing.Point(93, 12);
             this.brdTopCenter.Name = "brdTopCenter";
             this.brdTopCenter.Size = new System.Drawing.Size(75, 76);
@@ -64,6 +67,7 @@ namespace Tic_Tac_Toe
             // 
             // brdTopRight
             // 
+            this.brdTopRight.Enabled = false;
             this.brdTopRight.Location = new System.Drawing.Point(174, 12);
             this.brdTopRight.Name = "brdTopRight";
             this.brdTopRight.Size = new System.Drawing.Size(75, 76);
@@ -73,6 +77,7 @@ namespace Tic_Tac_Toe
             // 
             // brdCenterLeft
             // 
+            this.brdCenterLeft.Enabled = false;
             this.brdCenterLeft.Location = new System.Drawing.Point(12, 94);
             this.brdCenterLeft.Name = "brdCenterLeft";
             this.brdCenterLeft.Size = new System.Drawing.Size(75, 76);
@@ -83,6 +88,7 @@ namespace Tic_Tac_Toe
             // brdCenterCenter
             // 
             this.brdCenterCenter.AccessibleDescription = "";
+            this.brdCenterCenter.Enabled = false;
             this.brdCenterCenter.Location = new System.Drawing.Point(93, 94);
             this.brdCenterCenter.Name = "brdCenterCenter";
             this.brdCenterCenter.Size = new System.Drawing.Size(75, 76);
@@ -92,6 +98,7 @@ namespace Tic_Tac_Toe
             // 
             // brdCenterRight
             // 
+            this.brdCenterRight.Enabled = false;
             this.brdCenterRight.Location = new System.Drawing.Point(174, 94);
             this.brdCenterRight.Name = "brdCenterRight";
             this.brdCenterRight.Size = new System.Drawing.Size(75, 76);
@@ -101,6 +108,7 @@ namespace Tic_Tac_Toe
             // 
             // brdBottomLeft
             // 
+            this.brdBottomLeft.Enabled = false;
             this.brdBottomLeft.Location = new System.Drawing.Point(12, 176);
             this.brdBottomLeft.Name = "brdBottomLeft";
             this.brdBottomLeft.Size = new System.Drawing.Size(75, 76);
@@ -111,6 +119,7 @@ namespace Tic_Tac_Toe
             // 
             // brdBottomCenter
             // 
+            this.brdBottomCenter.Enabled = false;
             this.brdBottomCenter.Location = new System.Drawing.Point(93, 176);
             this.brdBottomCenter.Name = "brdBottomCenter";
             this.brdBottomCenter.Size = new System.Drawing.Size(75, 76);
@@ -120,6 +129,7 @@ namespace Tic_Tac_Toe
             // 
             // brdBottomRight
             // 
+            this.brdBottomRight.Enabled = false;
             this.brdBottomRight.Location = new System.Drawing.Point(174, 176);
             this.brdBottomRight.Name = "brdBottomRight";
             this.brdBottomRight.Size = new System.Drawing.Size(75, 76);
@@ -136,25 +146,37 @@ namespace Tic_Tac_Toe
             // 
             // TimeTimer
             // 
-            this.TimeTimer.Interval = 20;
+            this.TimeTimer.Interval = 50;
             this.TimeTimer.Tick += new System.EventHandler(this.TimeTimer_Tick);
             // 
             // BtnStart
             // 
             this.BtnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.BtnStart.Location = new System.Drawing.Point(212, 404);
+            this.BtnStart.Location = new System.Drawing.Point(263, 203);
             this.BtnStart.Name = "BtnStart";
-            this.BtnStart.Size = new System.Drawing.Size(127, 49);
+            this.BtnStart.Size = new System.Drawing.Size(135, 49);
             this.BtnStart.TabIndex = 0;
             this.BtnStart.Text = "Start";
             this.BtnStart.UseVisualStyleBackColor = true;
             this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnReset.Location = new System.Drawing.Point(404, 203);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(127, 49);
+            this.btnReset.TabIndex = 10;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.Reset_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 465);
+            this.ClientSize = new System.Drawing.Size(551, 264);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.BtnStart);
             this.Controls.Add(this.TimerBar);
             this.Controls.Add(this.brdBottomRight);
@@ -166,6 +188,8 @@ namespace Tic_Tac_Toe
             this.Controls.Add(this.brdTopRight);
             this.Controls.Add(this.brdTopCenter);
             this.Controls.Add(this.brdTopLeft);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -186,6 +210,7 @@ namespace Tic_Tac_Toe
         private System.Windows.Forms.ProgressBar TimerBar;
         private System.Windows.Forms.Timer TimeTimer;
         private System.Windows.Forms.Button BtnStart;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 
