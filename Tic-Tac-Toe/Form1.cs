@@ -19,7 +19,6 @@ namespace Tic_Tac_Toe
         public Form1()
         {
             InitializeComponent();
-            //this.TimerBar.Maximum = 5;
         }
 
         private void BrdButton_Click(object sender, EventArgs e)
