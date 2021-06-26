@@ -113,7 +113,7 @@ namespace Tic_Tac_Toe
                     MessageBox.Show("Player O  has won the game", "Congratulations!", MessageBoxButtons.OK);
                     break;
                 }
-                else if (Board.Length == 9)
+                else if (Board.Length == 10)
                 {
                     MessageBox.Show("No Winner!", "Let's Try Again!", MessageBoxButtons.OK);
                     break;
@@ -142,6 +142,8 @@ namespace Tic_Tac_Toe
             brdTopCenter.Enabled = false;
             brdTopLeft.Enabled = false;
             brdTopRight.Enabled = false;
+            TimeTimer.Enabled = false;
+            TimerBar.Value = 0;
         }
     }
 }
