@@ -65,13 +65,16 @@ namespace Tic_Tac_Toe
             brdTopCenter.Enabled = true;
             brdTopLeft.Enabled = true;
             brdTopRight.Enabled = true;
+
+            //if (brdBottomCenter.Enabled && brdBottomLeft.Enabled && brdBottomRight.Enabled && brdCenterCenter.Enabled && brdCenterLeft.Enabled && brdCenterRight.Enabled && brdTopCenter.Enabled && brdTopLeft.Enabled && brdTopRight.Enabled)
         }
 
         public void Winner()
         {
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 9; i++)
             {
                 string WinComb = "";
+                string Board = "";
 
                 switch (i)
                 {
@@ -99,9 +102,12 @@ namespace Tic_Tac_Toe
                     case 7:
                         WinComb = brdCenterCenter.Text + brdBottomLeft.Text + brdTopRight.Text;
                         break;
+                    case 8:
+                        Board = brdBottomCenter.Text + brdBottomLeft.Text + brdBottomRight.Text + brdCenterCenter.Text + brdCenterLeft.Text + brdCenterRight.Text + brdTopCenter.Text + brdTopLeft.Text + brdTopRight.Text;
+                        break;
                 }
 
-                string Board = brdBottomCenter.Text + brdBottomLeft.Text + brdBottomRight.Text + brdCenterCenter.Text + brdCenterLeft.Text + brdCenterRight.Text + brdTopCenter.Text + brdTopLeft.Text + brdTopRight.Text;
+                
 
                 if (WinComb.Equals("XXX"))
                 {
@@ -113,7 +119,7 @@ namespace Tic_Tac_Toe
                     MessageBox.Show("Player O  has won the game", "Congratulations!", MessageBoxButtons.OK);
                     break;
                 }
-                else if (Board.Length == 10)
+                else if (Board.Length.Equals(9))
                 {
                     MessageBox.Show("No Winner!", "Let's Try Again!", MessageBoxButtons.OK);
                     break;
