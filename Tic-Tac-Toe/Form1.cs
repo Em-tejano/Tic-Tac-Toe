@@ -12,8 +12,8 @@ namespace Tic_Tac_Toe
 {
     public partial class Form1 : Form
     {
-        string Plyr1 = "X";
-        string Plyr2 = "O";
+        readonly string Plyr1 = "X";
+        readonly string Plyr2 = "O";
         byte Trn = 0;
 
         public Form1()
@@ -65,8 +65,6 @@ namespace Tic_Tac_Toe
             brdTopCenter.Enabled = true;
             brdTopLeft.Enabled = true;
             brdTopRight.Enabled = true;
-
-            //if (brdBottomCenter.Enabled && brdBottomLeft.Enabled && brdBottomRight.Enabled && brdCenterCenter.Enabled && brdCenterLeft.Enabled && brdCenterRight.Enabled && brdTopCenter.Enabled && brdTopLeft.Enabled && brdTopRight.Enabled)
         }
 
         public void Winner()
